@@ -17,18 +17,24 @@ module.exports = {
         const commentIndex = comments.findIndex(comment => Number(comment.id)===Number(updateID))
         console.log(commentIndex);
         let comment = comments[commentIndex];
-
-        comments[commentIndex] = {
-            id: comment.id,
-            date: comment.date,
-            text: text || comment.text
-        };
-        res.status(200).send(comments);
+        if(comment){
+            comments[commentIndex] = {
+                id: comment.id,
+                date: comment.date,
+                text: text || comment.text
+            };
+            res.status(200).send(comments);
+        }
+        else{
+            res.status(400).send("Please enter valid ID");
+        }
+ 
     },
     delete: (req, res) => {
         const deleteID = req.params.id;
         commentIndex = comments.findIndex(comment => Number(comment.id)===Number(deleteID))
-        message.splice(commentIndex, 1);
+        console.log(commentIndex)
+        comments.splice(commentIndex, 1);
         res.status(200).send(comments);
     }
 }
