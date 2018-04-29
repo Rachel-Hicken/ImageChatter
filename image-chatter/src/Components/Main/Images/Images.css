@@ -1,8 +1,6 @@
 img{
     height: 100px;
     width: 100px;
-    display: flex;
-    justify-content: space-between;
-    direction: row;
-    margin: auto;
+    display: inline-block;
+    margin: 50px;
 }
