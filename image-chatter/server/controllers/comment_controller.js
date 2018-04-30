@@ -1,10 +1,10 @@
-let comments = [];
+let comments = [{"text":"hello world"},{"text":"blah"}];
 let id =0;
 
 module.exports = {
     create: (req, res) => {
-        const {date, text} = req.body;
-        comments.push({id, date, text});
+        const {text} = req.body;
+        comments.push({id, text});
         id++;
         res.status(200).send(comments)
     },
@@ -20,7 +20,7 @@ module.exports = {
         if(comment){
             comments[commentIndex] = {
                 id: comment.id,
-                date: comment.date,
+                // date: comment.date,
                 text: text || comment.text
             };
             res.status(200).send(comments);

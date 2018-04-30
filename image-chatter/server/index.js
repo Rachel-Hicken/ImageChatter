@@ -6,6 +6,7 @@ const cc = require(__dirname + '/controllers/comment_controller')
 
 app.use(bodyParser.json());
 
+
 const baseURL = "/api/comments";
 app.post( baseURL, cc.create)
 app.get( baseURL, cc.read)
