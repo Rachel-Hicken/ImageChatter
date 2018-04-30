@@ -23,13 +23,13 @@ export default class CommentView extends Component{
     //methods: create, read(didmount), update, delete
    
     componentDidMount(){
-        console.log("blah");
+        // console.log("blah");
         axios.get('/api/comments').then((res)=>{
             this.setState({
                 comments: res.data
             })
         })   
-        console.log("blah5");
+        // console.log("blah5");
     }
 
     createHandler(event){
@@ -70,7 +70,7 @@ export default class CommentView extends Component{
     render(){
         return(
             <div>
-                {console.log("blah2")}
+                {/* {console.log("blah2")} */}
                 <h2 className="paintingTitle">The Threatened Swan by Jan Asselijn</h2>
                 <div className="commentText">
                 {this.state.comments.map((comments)=>(
