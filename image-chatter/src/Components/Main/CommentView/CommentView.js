@@ -72,7 +72,7 @@ export default class CommentView extends Component{
             <div>
                 {console.log("blah2")}
                 <h2>The Threatened Swan by Jan Asselijn</h2>
-                <div>
+                <div className="commentText">
                 {this.state.comments.map((comments)=>(
                     <Comments id={comments.id} 
                     key={comments.id} 

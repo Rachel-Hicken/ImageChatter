@@ -9,7 +9,7 @@ import './Main.css'
 export default class Main extends Component{
     render(){
         return(
-            <div>
+            <div className="main">
                 <Images/>
                 <img className="mainPic" 
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Jan_Asselijn_-_De_bedreigde_zwaan%3B_later_opgevat_als_allegorie_op_Johan_de_Witt_-_Google_Art_Project.jpg/450px-Jan_Asselijn_-_De_bedreigde_zwaan%3B_later_opgevat_als_allegorie_op_Johan_de_Witt_-_Google_Art_Project.jpg" 
@@ -27,6 +27,7 @@ export default class Main extends Component{
                 src="http://media.giuntiscuola.it/_tdz/@media_manager/2616690/" 
                 alt="Irises"/>
                 <Comments/> */}
+                {/* <Images newImage={'http://stories.barkpost.com/wp-content/uploads/2014/12/shame91.jpg'}/> */}
             </div>
         )
     }
