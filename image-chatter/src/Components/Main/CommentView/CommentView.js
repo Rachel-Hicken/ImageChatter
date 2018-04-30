@@ -2,15 +2,16 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import './CommentView.css'
+import Comments from  '../Comments/Comments'
 
 // const baseURL = "/api/comments"; this didn't work
-export default class Comments extends Component{
+export default class CommentView extends Component{
     
     constructor(){
         super()
         this.state={
             comments: [],
-            input: ''
+            text: ''
 
         }
         this.createHandler = this.createHandler.bind(this);
@@ -32,14 +33,14 @@ export default class Comments extends Component{
     }
 
     createHandler(event){
-        const {input} = this.state;
-        if(event.key === 'Enter' && input.length !== 0){
-        axios.post('/api/comments', {input}).then((res)=>{
+        const {text} = this.state;
+        if(event.key === 'Enter' && text.length !== 0){
+        axios.post('/api/comments', {text}).then((res)=>{
             this.setState({
                 comments: res.data
             })
         });
-        this.setState({input: ''})
+        this.setState({text: ''})
         }
     }
 
@@ -50,8 +51,8 @@ export default class Comments extends Component{
         })
     }
 
-    deleteHandler(){
-        axios.delete('/api/comments').then((res)=>{
+    deleteHandler(id){
+        axios.delete('/api/comments' + `/${id}`).then((res)=>{
             this.setState({
                 comments: res.data
             })
@@ -59,7 +60,7 @@ export default class Comments extends Component{
     }
     changeHandler(event){
         this.setState({
-            input: event.target.value
+            text: event.target.value
         })
     }
 
@@ -70,14 +71,24 @@ export default class Comments extends Component{
         return(
             <div>
                 {console.log("blah2")}
-                <p>Info about this Pic</p>
-                {this.state.input}
-                <input type="text" placeholder="Type your comment here"/>
-                <button className="submitButton" onClick={this.createHandler} >Submit Comment</button> 
-                {/* Need to add onclick update comment and create */}
-                <button className="deleteButton" onClick={this.deleteHandler}>Delete</button>
-                <button className="editButton">Edit</button>
-                {/* Need to set onclick to bring text by id in to comment box */}
+                <h2>The Threatened Swan by Jan Asselijn</h2>
+                <div>
+                {this.state.comments.map((comments)=>(
+                    <Comments id={comments.id} 
+                    key={comments.id} 
+                    text={comments.text} 
+                    edit={this.updateHandler} 
+                    remove={this.deleteHandler}/>
+                ))}
+                </div>
+                <div>
+                    <input value={this.state.text}
+                    onChange={this.changeHandler}
+                    onKeyPress={this.createHandler}
+                    placeholder="Leave comments here"/>
+                    <button onClick={this.createHandler}>Submit</button>
+                </div>
+            
             </div>
         )
     }

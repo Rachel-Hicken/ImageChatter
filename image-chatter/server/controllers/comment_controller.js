@@ -1,4 +1,4 @@
-let comments = [{"text":"hello world"},{"text":"blah"}];
+let comments = [{"id":"0.3","text":"This is my favorit painting!"},{"id":"0.2","text":"Very impressive"}];
 let id =0;
 
 module.exports = {
