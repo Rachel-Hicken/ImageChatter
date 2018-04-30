@@ -18,7 +18,7 @@ export default class Comments extends Component{
     edit(event){
         const {text}= this.state;
         const {id, edit} = this.props;
-        if(event.key=== "Enter" && text.length !== 0){
+        if(event.key ==="Enter" && text.length !== 0){
             edit(id, text);
             this.setState({editting: false});
         }
@@ -26,6 +26,7 @@ export default class Comments extends Component{
     render(){
         const {id, text, edit, remove}=this.props;
         const {editting} = this.state;
+        // console.log(id, text);
         return(
             <div>
                 <div>
@@ -33,7 +34,10 @@ export default class Comments extends Component{
                     <input className="commentBox" 
                         value={this.state.text}
                         onChange={this.changeHandler}
-                        onKeyPress={this.edittor}/>
+                        onKeyPress={this.edit}
+                        
+                        />
+                        
                     :
                     <div className="commentText">{text}</div>
                     }

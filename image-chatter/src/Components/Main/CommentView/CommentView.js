@@ -34,7 +34,7 @@ export default class CommentView extends Component{
 
     createHandler(event){
         const {text} = this.state;
-        if(event.key === 'Enter' && text.length !== 0){
+        if(text.length !== 0){
         axios.post('/api/comments', {text}).then((res)=>{
             this.setState({
                 comments: res.data
@@ -84,7 +84,6 @@ export default class CommentView extends Component{
                 <div>
                     <input value={this.state.text}
                     onChange={this.changeHandler}
-                    onKeyPress={this.createHandler}
                     placeholder="Leave comments here"/>
                     <button onClick={this.createHandler}>Submit</button>
                 </div>
