@@ -5,10 +5,12 @@
 }
 .image{
     display: inline-block;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-family: cursive;
+    margin-bottom: 35px;
 }
 .chatter{
     display: inline-block;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 45px;
+    font-size: 50px;
 }

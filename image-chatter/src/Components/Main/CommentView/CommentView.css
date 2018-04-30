@@ -1,7 +1,13 @@
-h2{
+.paintingTitle{
     font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .commentText{
     font-size: 18px;
+    margin: 15px;
+}
+.commentBox{
+    margin-bottom: 35px;
 }

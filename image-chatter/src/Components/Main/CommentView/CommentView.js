@@ -71,7 +71,7 @@ export default class CommentView extends Component{
         return(
             <div>
                 {console.log("blah2")}
-                <h2>The Threatened Swan by Jan Asselijn</h2>
+                <h2 className="paintingTitle">The Threatened Swan by Jan Asselijn</h2>
                 <div className="commentText">
                 {this.state.comments.map((comments)=>(
                     <Comments id={comments.id} 
@@ -81,7 +81,7 @@ export default class CommentView extends Component{
                     remove={this.deleteHandler}/>
                 ))}
                 </div>
-                <div>
+                <div className="commentBox">
                     <input value={this.state.text}
                     onChange={this.changeHandler}
                     placeholder="Leave comments here"/>

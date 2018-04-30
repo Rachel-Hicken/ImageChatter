@@ -1,6 +1,7 @@
 img{
     height: 100px;
     width: 100px;
-    display: inline-block;
-    margin: 25px;
+    display: inline;
+    margin: 15px;
+    margin-top: 35px;
 }

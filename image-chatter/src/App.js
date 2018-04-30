@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Header from './Components/Header/Header'
 import Main from './Components/Main/Main'
+import './reset.css'
 
 class App extends Component {
   render() {
