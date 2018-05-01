@@ -1,0 +1,25 @@
+Points for noDB project
+
+Requirement	Points	Max
+1. 1 stateful component, not counting App.js	required	
+2. 1 stateless functional component	required	
+3. 1 GET endpoint in Express	required	
+4. 1 endpoint that uses req.body	required	
+5. each component above minimum	0.5	1
+6. use a single component more than once	0.5	1
+7. URL parameter	0.25	0.5
+8. Query string parameter	0.25	0.5
+9. external web API, per endpoint used	0.5	2
+10. full CRUD	1	1
+
+
+1. Yes, CommentView.js
+2. Yes, Header.js
+3. Yes, index.js
+4. Yes, comment_controller.js
+5. 2, images, main, 
+6. 0
+7. 2, index.js-put & delete
+8. 0
+9. 2, StarWars.js
+10. 1, CommentView.js/index.js
